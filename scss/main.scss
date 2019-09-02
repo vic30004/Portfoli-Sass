@@ -1,0 +1,260 @@
+
+@import "config";
+@import "utilities";
+
+
+
+
+
+//general Style
+
+* {
+    margin: 0;
+    padding:0;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    line-height: 1.6;
+    background: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: $dark-color;
+}
+
+ul {
+    list-style: none;
+    
+}
+h2,h3,h4 {
+    text-transform: uppercase;
+}
+
+img {
+    width: 100%;
+}
+
+//header 
+
+#header{
+    display: flex;
+    &-home {
+        background: $bg-img no-repeat center right/cover;
+        height: 100vh;
+        color: #fff;
+        
+       
+        
+        
+        //header content
+        
+        .header-content{
+            text-align: center;
+            padding-top: 20%;
+            h1 {
+                font-size: 4rem;
+                line-height: 1.2;
+            }
+        }
+
+     
+
+        #profile-pic{
+            width:150px;
+            border-radius: 50%;
+            transition: all 3s ease-in;
+            margin-bottom: 2.5rem;
+            z-index:-1;
+
+            &:hover{
+                transform: scale(1.5);
+                border-radius: 30%;
+            }
+        }
+
+    }
+    &-inner{
+        background: $abt-img no-repeat  20% 20%/cover;
+        height: 5.5rem;
+        border-bottom: 3px solid $main-color;
+        z-index: 1;
+
+        .overlay{
+            position: absolute;
+            top:0px;
+            height:5.5rem;
+        }
+        a{
+            color: $dark-color;
+            z-index: 1;
+        }
+
+}
+
+}
+
+
+
+//logo 
+
+#logo{
+    font-family: $logo-font;
+    font-size: 2rem;
+}
+
+//main nav 
+
+#main-nav{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+
+    ul{
+        display: flex;
+
+    }
+    li{
+        padding: 1rem 1.5rem;
+    }
+
+    a{
+        text-decoration: none;
+        color:#fff;
+        text-transform: uppercase;
+        border-bottom: 3px transparent solid;
+        padding-bottom: 0.5rem;
+        transition: border-color 0.5s;
+
+        &:hover{
+            border-color: $medium-color;
+        }
+        &.current{
+            border-color: $main-color;
+        }
+    }
+}
+
+#home{
+
+  &-c{
+    .process{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1.5rem;
+        text-align: center;
+        // process-step
+        &-step {
+            position: absolute;
+            top:0;
+            right:0;
+            font-size: 28px;
+            background: $main-color;
+            color:set-text-color($main-color);
+            border-radius: 50%;
+            height:15px;
+            width:15px;
+            line-height: 15px;
+            padding:1rem;
+            transition: all 1s;
+        }
+        // icorn
+        &-icon{
+            border-radius: 50%;
+            background:$dark-color;
+            color:set-text-color($dark-color);
+            padding:2rem;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            position: relative;
+            transition: all 1s;
+
+            &:hover{
+                background: $main-color;
+                width: 90px;
+                height: 90px;
+                line-height: 90px;
+
+                .process-step{
+                    background: $dark-color;
+                }
+            }
+        }
+    }
+  } 
+}
+
+
+
+// Footer 
+
+#main-footer{
+    background: $dark-color;
+    color: #fff;
+
+    .footer-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .social .fab{
+            margin-right:1rem;
+            border:2px #fff solid;
+            border-radius: 50%;
+            height:20px;
+            width:20px;
+            line-height:20px;
+            text-align: center;
+            padding:0.5rem;
+
+            &:hover{
+                background: $main-color;
+            }
+        }
+    }
+}
+
+
+#about{
+    &-a{
+        height: 100%;
+        .about-info{
+    display: grid;
+    grid-template-areas: 
+        'bio-image bio bio';
+        grid-gap: 1.2rem;
+        
+        }
+        .bio-image{
+            grid-area: bio-image;
+            width: 200px;
+        }
+        .bio{
+            grid-area: bio;
+            border-left: 3px solid $main-color;
+            padding:0.8rem;
+        }
+    }
+    // About b
+
+    &-b {
+        .progress{
+            overflow: hidden;
+            height:20px;
+            background: $medium-color;
+            border-radius: 5px;
+            margin-bottom: 0.3rem;
+
+            div{
+                height:100%;
+                color:#fff;
+                text-align: center;
+                background:$main-color;
+            }
+        }
+    }
+
+}
